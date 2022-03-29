@@ -1,0 +1,24 @@
+.header {
+  width: 100%;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 2px solid #17b2ce;
+
+  .navigation {
+    margin: auto;
+    width: 60%;
+
+    &__list {
+      list-style-type: none;
+      display: flex;
+      justify-content: center;
+
+      &--item {
+        font-size: 1.4em;
+        margin: 5px 15px;
+      }
+    }
+  }
+}
