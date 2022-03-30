@@ -1,16 +1,37 @@
 import './App.scss';
 import Header from "./components/Header/Header";
-import { useOutlet } from "react-router-dom";
+import {BrowserRouter, Route, Routes} from "react-router-dom";
 import Main from "./components/Main/Main";
+import Categories from "./components/Categories/Categories";
+import Cart from "./components/Cart/Cart";
+import React, {useState} from "react";
+import CartContext from "./Context/CartContext";
 
 function App() {
-    const outlet = useOutlet();
+
+    const [items, setItems] = useState([]);
 
     return (
-        <>
-            <Header />
-            {outlet ? outlet : <Main />}
-        </>
+        <CartContext.Provider value={{ cart: items, setCart: setItems }}>
+            <BrowserRouter>
+                <Routes>
+                    <Route path="/" element={
+                        <>
+                            <Header />
+                            <Main />
+                        </>
+                    } >
+                        <Route path="products" element={<Main />} />
+                        <Route path="categories" element={<Categories />} />
+                        <Route path="cart" element={<Cart />} />
+                        <Route
+                            path="*"
+                            element={ <Main /> }
+                        />
+                    </Route>
+                </Routes>
+            </BrowserRouter>
+        </CartContext.Provider>
     );
 }
 

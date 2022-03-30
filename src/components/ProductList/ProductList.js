@@ -3,6 +3,6 @@ import './ProductList.scss'
 
 export default function ProductList({ products }) {
     return (
-        products && products.map(product => <Product price={product.price} img={product.image} name={product.title} key={product.id}/>)
+        products && products.map(product => <Product data={product} key={product.id}/>)
     );
 }
