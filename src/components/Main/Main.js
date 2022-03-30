@@ -1,7 +1,8 @@
 import './Main.scss'
 import ProductList from "../ProductList/ProductList";
 import useFetch from "../../Hooks/useFetch";
-import CartContext from "../../Context/CartContext";
+import FetchError from "../FetchError/FetchError";
+import FetchingLoader from "../FetchingLoader/FetchingLoader";
 
 export default function Main() {
 
@@ -11,8 +12,8 @@ export default function Main() {
             <section className="wrapper">
                 <h1> Done is better than Perfect ! </h1>
                 <div className="products">
-                    {error && <div>unexpected error: {error}</div>}
-                    {fetching && <div>fetching products...</div>}
+                    {error && <FetchError message={error}/>}
+                    {fetching && <FetchingLoader />}
                     {products && <ProductList products={products} />}
                 </div>
             </section>

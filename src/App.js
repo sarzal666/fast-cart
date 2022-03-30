@@ -1,6 +1,6 @@
 import './App.scss';
 import Header from "./components/Header/Header";
-import {BrowserRouter, Route, Routes} from "react-router-dom";
+import {BrowserRouter, Route, Routes, Outlet} from "react-router-dom";
 import Main from "./components/Main/Main";
 import Categories from "./components/Categories/Categories";
 import Cart from "./components/Cart/Cart";
@@ -18,7 +18,7 @@ function App() {
                     <Route path="/" element={
                         <>
                             <Header />
-                            <Main />
+                            <Outlet />
                         </>
                     } >
                         <Route path="products" element={<Main />} />

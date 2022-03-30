@@ -3,7 +3,6 @@ import Button from "../Button/Button";
 import CartContext from "../../Context/CartContext";
 
 export default function Product({data}) {
-    console.log(data)
     return (
         <CartContext.Consumer>
             {({ cart,setCart }) => {
