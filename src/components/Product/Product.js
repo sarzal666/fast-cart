@@ -1,3 +1,5 @@
+import './Product.scss';
+
 export default function Product({name, img, price}) {
     return (
         <div className="product">
