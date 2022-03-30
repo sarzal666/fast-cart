@@ -3,10 +3,15 @@ import ProductList from "../ProductList/ProductList";
 import useFetch from "../../Hooks/useFetch";
 import FetchError from "../FetchError/FetchError";
 import FetchingLoader from "../FetchingLoader/FetchingLoader";
+import {useParams} from "react-router-dom";
 
 export default function Main() {
 
-    const { products, fetching, error } = useFetch('https://fakestoreapi.com/products')
+    const { category } = useParams();
+    const url = category ? `https://fakestoreapi.com/products/category/${category}` :
+        'https://fakestoreapi.com/products'
+
+    const { products, fetching, error } = useFetch(url)
 
     return (
             <section className="wrapper">
