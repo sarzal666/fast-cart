@@ -1,0 +1,17 @@
+button {
+  background-color: #17b2ce;
+  padding: 5px 20px;
+  width: 150px;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  font-weight: bold;
+  font-size: 1.2em;
+  text-transform: uppercase;
+  &:hover {
+    background-color: #10d0f3;
+  }
+  &:active {
+    transform: translate(1px,2px);
+  }
+}
