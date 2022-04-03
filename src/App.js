@@ -1,18 +1,19 @@
 import './App.scss';
-import Header from "./components/Header/Header";
+import Header from "./Components/Header/Header";
 import {BrowserRouter, Route, Routes, Outlet} from "react-router-dom";
-import Main from "./components/Main/Main";
-import Categories from "./components/Categories/Categories";
-import Cart from "./components/Cart/Cart";
-import React, {useState} from "react";
+import Main from "./Components/Main/Main";
+import Categories from "./Components/Categories/Categories";
+import Cart from "./Components/Cart/Cart";
+import React from "react";
 import CartContext from "./Context/CartContext";
+import useCart from "./Hooks/useCart";
 
 function App() {
 
-    const [items, setItems] = useState([]);
+    const { items, dispatch } = useCart();
 
     return (
-        <CartContext.Provider value={{ cart: items, setCart: setItems }}>
+        <CartContext.Provider value={{ cart: items, setCart: dispatch }}>
             <BrowserRouter>
                 <Routes>
                     <Route path="/" element={

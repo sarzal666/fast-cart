@@ -13,9 +13,6 @@ export default function Header() {
                         <Link to="/categories">Categories</Link>
                     </li>
                     <li className="navigation__list--item">
-                        <Link to="/sale">Sale</Link>
-                    </li>
-                    <li className="navigation__list--item">
                         <Link to="/cart">Your Cart</Link>
                     </li>
                 </ul>
