@@ -14,10 +14,9 @@ export default function Header() {
                         <Link to="/categories">Categories</Link>
                     </li>
                 </ul>
-                {/*<div className="cart">*/}
-                {/*    <img src="/shopping-cart.png" alt=""/>*/}
-                {/*</div>*/}
-                <CartIcon />
+                <Link to="/cart">
+                    <CartIcon />
+                </Link>
             </nav>
         </header>
     );

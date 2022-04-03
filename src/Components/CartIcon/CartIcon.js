@@ -8,7 +8,7 @@ export default function CartIcon() {
     const isSmthInCart = cart.length > 0;
 
     return (
-        <div className="cart">
+        <div className="cart-icon">
             <img src="/shopping-cart.png" alt="shopping cart" />
             {isSmthInCart && <div className="items-counter">{cart.length}</div>}
         </div>
