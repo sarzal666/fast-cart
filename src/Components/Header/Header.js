@@ -1,5 +1,6 @@
 import './Header.scss';
 import {Link} from "react-router-dom";
+import CartIcon from "../CartIcon/CartIcon";
 
 export default function Header() {
     return (
@@ -12,10 +13,11 @@ export default function Header() {
                     <li className="navigation__list--item">
                         <Link to="/categories">Categories</Link>
                     </li>
-                    <li className="navigation__list--item">
-                        <Link to="/cart">Your Cart</Link>
-                    </li>
                 </ul>
+                {/*<div className="cart">*/}
+                {/*    <img src="/shopping-cart.png" alt=""/>*/}
+                {/*</div>*/}
+                <CartIcon />
             </nav>
         </header>
     );

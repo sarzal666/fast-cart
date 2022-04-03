@@ -9,10 +9,9 @@ function cartReducer(cart, { product, type }) {
             const isInCart = cart.findIndex(item => item.product.id === product.id)
             if ( isInCart !== -1 ) {
                 cart[isInCart].increaseQuantity()
-                return cart;
+                return [...cart];
             }
-            cart.push(new CartItem(product))
-            return cart;
+            return [...cart, new CartItem(product)]
         }
         case cartActions.DELETE: {
             return cart.filter(item => item.product.id === product.id)

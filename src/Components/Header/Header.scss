@@ -7,13 +7,16 @@
   border-bottom: 2px solid #17b2ce;
 
   .navigation {
-    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 60%;
 
     &__list {
-      list-style-type: none;
       display: flex;
       justify-content: center;
+      list-style-type: none;
+      padding: 0;
 
       &--item {
         font-size: 1.4em;
